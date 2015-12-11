@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 27
 
@@ -19,37 +19,36 @@ n=0から始めて連続する整数で素数を生成したときに最長の�
 """
 import time
 import math
-time1=time.time()
+time1 = time.time()
 
-sosu=[2]           #make_primes start
-for i in range(3,3000,2):
-    if i>3000:
+sosu = [2]  # make_primes start
+for i in range(3, 3000, 2):
+    if i > 3000:
         break
-    if len(sosu)>=10001:
+    if len(sosu) >= 10001:
         break
     for j in sosu:
-        if i%j==0:
+        if i % j == 0:
             break
         else:
-            if j>math.sqrt(i):
+            if j > math.sqrt(i):
                 sosu.append(i)
-                break           #make_primes end
-sosu=tuple(sosu)
+                break  # make_primes end
+sosu = tuple(sosu)
 
-answer_n=0
-for a in range(-999,1000,2):
+answer_n = 0
+for a in range(-999, 1000, 2):
     for b in sosu[:9000]:
         if b >= 1000:
             break
-        n=-1
+        n = -1
         while True:
-            n+=1
-            if n**2+a*n+b not in sosu:
+            n += 1
+            if n ** 2 + a * n + b not in sosu:
                 break
-        if answer_n<n-1:
-            answer_n=n-1
-            answer=a*b
-            print (a,b)
-print answer
-print time.time()-time1, "seconds"
-#del(sosu,time1,i,j)
+        if answer_n < n - 1:
+            answer_n = n - 1
+            answer = a * b
+            print(a, b)
+print(answer)
+print(time.time() - time1, "seconds")

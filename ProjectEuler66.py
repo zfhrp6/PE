@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 66
 
@@ -18,25 +18,24 @@ D ≤ 1000に対するxを最小にする解で, xが最大になるようなD�
 """
 import time
 import math
-import Euler
-t0=time.time()
-answer=0
-xDdic={}
-for D in range(1,1000):
-    if math.sqrt(D)%1==0.0:
+t0 = time.time()
+answer = 0
+xDdic = {}
+for D in range(1, 1000):
+    if math.sqrt(D) % 1 == 0.0:
         continue
-    print D
-    flag=False
-    x=1
+    print(D)
+    flag = False
+    x = 1
     while True:
-        for y in range(x,1,-1):
-            if (x**2-1)*1.0/y**2==float(D):
-                xDdic[x]=D
-                flag=True
+        for y in range(x, 1, -1):
+            if (x ** 2 - 1) * 1.0 / y ** 2 == float(D):
+                xDdic[x] = D
+                flag = True
                 break
         if flag:
             break
-        x+=1
+        x += 1
 
-print xDdic[max(xDdic.keys())]
-print time.time()-t0, "seconds"
+print(xDdic[max(xDdic.keys())])
+print(time.time() - t0, "seconds")

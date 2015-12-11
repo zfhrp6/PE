@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 204
 
@@ -14,16 +14,16 @@ project euler problem 204
 """
 import time
 import Euler
-time1=time.time()
-i=0
-count=0
-while i<=10**9:
-    i+=1
-    if i%1000==0:
-        print i
+time1 = time.time()
+i = 0
+count = 0
+while i <= 10 ** 9:
+    i += 1
+    if i % 1000 == 0:
+        print(i)
     if Euler.primecheck(i):
-        count+=1
-    elif Euler.factoring(i)[-1]<=100:
-        count+=1
-print count
-print time.time()-time1, "seconds"
+        count += 1
+    elif Euler.factoring(i)[-1] <= 100:
+        count += 1
+print(count)
+print(time.time() - time1, "seconds")

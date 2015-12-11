@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 94
 
@@ -12,33 +12,32 @@ project euler problem 94
 """
 import time
 import math
-t0=time.time()
-answer=0
-limit=10**9
-i=1
-while i<limit/3+6:
-    if i%100000==0:
-        print i
-    i+=1
-    b=i-1
-    if i+2*b>limit:
+t0 = time.time()
+answer = 0
+limit = 10 ** 9
+i = 1
+while i < limit / 3 + 6:
+    if i % 100000 == 0:
+        print(i)
+    i += 1
+    b = i - 1
+    if i + 2 * b > limit:
         continue
-    if i%2==0:
-        if math.sqrt((3*i-1)*(i-1))-int(math.sqrt((3*i-1)*(i-1)))==0.0:
-            answer+=i+2*b
+    if i % 2 == 0:
+        if math.sqrt((3 * i - 1) * (i - 1)) - int(math.sqrt((3 * i - 1) * (i - 1))) == 0.0:
+            answer += i + 2 * b
     else:
-        if (math.sqrt((6*i-1)*(2*i+1)))/4.0-int((math.sqrt((6*i-1)*(2*i+1)))/4.0)==0.0:
-            answer+=i+2*b
+        if (math.sqrt((6 * i - 1) * (2 * i + 1))) / 4.0 - int((math.sqrt((6 * i - 1) * (2 * i + 1))) / 4.0) == 0.0:
+            answer += i + 2 * b
 
-    c=i+1
-    if i%2==0:
-        if math.sqrt((3*i+1)*(i+1))-int(math.sqrt((3*i+1)*(i+1)))==0.0:
-            answer+=i+2*c
+    c = i + 1
+    if i % 2 == 0:
+        if math.sqrt((3 * i + 1) * (i + 1)) - int(math.sqrt((3 * i + 1) * (i + 1))) == 0.0:
+            answer += i + 2 * c
     else:
-        if (math.sqrt((6*i+5)*(2*i+3)))/4.0-int((math.sqrt((6*i+5)*(2*i+3)))/4.0)==0.0:
-            answer+=i+2*c
+        if (math.sqrt((6 * i + 5) * (2 * i + 3))) / 4.0 - int((math.sqrt((6 * i + 5) * (2 * i + 3))) / 4.0) == 0.0:
+            answer += i + 2 * c
 
 
-
-print answer
-print time.time()-t0, "seconds"
+print(answer)
+print(time.time() - t0, "seconds")

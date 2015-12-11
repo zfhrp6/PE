@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 47
 
@@ -14,29 +14,30 @@ project euler problem 47
 """
 import time
 import Euler
-time1=time.time()
+time1 = time.time()
+
 
 def func(x):
-    ans=list(set(Euler.factoring(x)))
+    ans = list(set(Euler.factoring(x)))
     ans.sort()
     return ans
 
-x=0
-while time.time()-time1<3000:
-    x+=1
-    if len(func(x+3))!=4:
-        x+=3
+x = 0
+while time.time() - time1 < 3000:
+    x += 1
+    if len(func(x + 3)) != 4:
+        x += 3
         continue
-    elif len(func(x+2))!=4:
-        x+=2
+    elif len(func(x + 2)) != 4:
+        x += 2
         continue
-    elif len(func(x+1))!=4:
-        x+1
+    elif len(func(x + 1)) != 4:
+        x + 1
         continue
-    elif len(func(x))!=4:
+    elif len(func(x)) != 4:
         continue
     else:
-        print "ok"
+        print("ok")
         break
-print "answer is %d"%(x)
-print time.time()-time1,"seconds"
+print("answer is %d" % (x))
+print(time.time() - time1, "seconds")

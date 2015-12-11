@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 187
 
@@ -11,21 +11,21 @@ project euler problem 187
 """
 import time
 import Euler
-t0=time.time()
+t0 = time.time()
 
-primes=tuple(Euler.prime_make(50000000))
+primes = tuple(Euler.prime_make(50000000))
 
-answer_count=0
+answer_count = 0
 for i in primes:
-    if int(i)>10000:
+    if int(i) > 10000:
         break
-    print i
+    print(i)
     for j in primes:
-        if j<i:
+        if j < i:
             continue
-        if int(i)*int(j)>=10**8:
+        if int(i) * int(j) >= 10 ** 8:
             break
-        answer_count+=1
+        answer_count += 1
 
-print answer_count
-print time.time()-t0, "seconds"
+print(answer_count)
+print(time.time() - t0, "seconds")

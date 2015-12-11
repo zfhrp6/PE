@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 102
 
@@ -17,20 +17,21 @@ project euler problem 102
 """
 import time
 from math import fabs
-time1=time.time()
-file=open("ProjectEuler102triangles.txt","r")
-sets=file.read().split("\n")
-answer=0
+t0 = time.time()
+f = open("ProjectEuler102triangles.txt", "r")
+sets = f.read().split("\n")
+answer = 0
 for i in range(1000):
-    t=sets[i].split(",")
-    func=lambda a,b,c,d,e,f : fabs((a-e)*(d-f)-(b-f)*(c-e))/2
-    func2=lambda a,b,c,d,e,f : (fabs(a*d-b*c)+fabs(c*f-d*e)+fabs(e*b-f*a))/2
-    a,b,c,d,e,f=int(t[0]),int(t[1]),int(t[2]),int(t[3]),int(t[4]),int(t[5])
-    if func(a,b,c,d,e,f)==func2(a,b,c,d,e,f):
-            answer+=1
+    t = sets[i].split(",")
+    func = lambda a, b, c, d, e, f: fabs(
+        (a - e) * (d - f) - (b - f) * (c - e)) / 2
+    func2 = lambda a, b, c, d, e, f: (
+        fabs(a * d - b * c) + fabs(c * f - d * e) + fabs(e * b - f * a)) / 2
+    a, b, c, d, e, f = int(t[0]), int(t[1]), int(
+        t[2]), int(t[3]), int(t[4]), int(t[5])
+    if func(a, b, c, d, e, f) == func2(a, b, c, d, e, f):
+        answer += 1
 
-
-
-file.close()
-print answer
-print time.time()-time1, "seconds"
+f.close()
+print(answer)
+print('{} seconds'.format(time.time() - t0))

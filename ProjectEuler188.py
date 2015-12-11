@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 188
 
@@ -12,10 +12,10 @@ a　↑↑　(k+1) = a^(a　↑↑　k).
 1777↑↑1855の最後の8桁を求めよ.
 """
 import time
-t0=time.time()
-answer=1777
+t0 = time.time()
+answer = 1777
 for i in range(1854):
-    answer=(answer%100000000)**1777
+    answer = (answer % 100000000) ** 1777
 
-print answer%100000000
-print time.time()-t0, "seconds"
+print(answer % 100000000)
+print(time.time() - t0, "seconds")

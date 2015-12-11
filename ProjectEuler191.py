@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 191
 
@@ -20,27 +20,27 @@ LAOO LAOA LAAO
 30日間の場合, 賞を貰える文字列は何通りか?
 """
 import time
-import math
-import Euler
-t0=time.time()
+t0 = time.time()
+
+
 def appending(lst):
-    leng=len(lst)
+    leng = len(lst)
     for i in range(len(lst)):
-        txtO=lst[i]+"O"
-        txtA=lst[i]+"A"
-        txtL=lst[i]+"L"
+        txtO = lst[i] + "O"
+        txtA = lst[i] + "A"
+        txtL = lst[i] + "L"
         lst.append(txtO)
-        if not "AAA" in txtA:
+        if "AAA" not in txtA:
             lst.append(txtA)
-        if txtL.count("L")<2:
+        if txtL.count("L") < 2:
             lst.append(txtL)
     del(lst[:leng])
-    print len(lst)
-lst=["O","A","L"]
+    print(len(lst))
+lst = ["O", "A", "L"]
 for i in range(3):
     appending(lst)
-answer=len(lst)
+answer = len(lst)
 
 
-print answer
-print time.time()-t0, "seconds"
+print(answer)
+print(time.time() - t0, "seconds")

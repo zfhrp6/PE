@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 43
 
@@ -17,22 +17,22 @@ d_1を1桁目, d_2を2桁目の数とし, 以下順にd_nを定義する. この
 """
 import time
 import itertools
-time1=time.time()
-amount=0
-for j in itertools.permutations([1,2,3,4,5,6,7,8,9,0]):
-    i=0
+time1 = time.time()
+amount = 0
+for j in itertools.permutations([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]):
+    i = 0
     for k in j:
-        i+=k
-        i*=10
-    i/=10
-    if (int(str(i)[1:4])%2==0
-        and int(str(i)[2:5])%3==0
-        and int(str(i)[3:6])%5==0
-        and int(str(i)[4:7])%7==0
-        and int(str(i)[5:8])%11==0
-        and int(str(i)[6:9])%13==0
-        and int(str(i)[7:10])%17==0):
-            amount+=i
+        i += k
+        i *= 10
+    i /= 10
+    if (int(str(i)[1:4]) % 2 == 0
+            and int(str(i)[2:5]) % 3 == 0
+            and int(str(i)[3:6]) % 5 == 0
+            and int(str(i)[4:7]) % 7 == 0
+            and int(str(i)[5:8]) % 11 == 0
+            and int(str(i)[6:9]) % 13 == 0
+            and int(str(i)[7:10]) % 17 == 0):
+        amount += i
 
-print amount
-print time.time()-time1, "seconds"
+print(amount)
+print(time.time() - time1, "seconds")

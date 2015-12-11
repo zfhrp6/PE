@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#Project Euler Problem 97
+# Project Euler Problem 97
 """
 100万桁を超える初めての素数は1999年に発見された.
 これはメルセンヌ素数であり, 2^6972593 - 1 である. 実際, 2,098,960桁ある.
@@ -10,12 +10,12 @@
 """
 
 import time
-time1=time.time()
+time1 = time.time()
 
-num=1
+num = 1
 for i in range(7830457):
-    num*=2
-    num=num%10000000000
-num=(num*28433)%10000000000 + 1
-print num
-print time.time()-time1,"Seconds"
+    num *= 2
+    num = num % 10000000000
+num = (num * 28433) % 10000000000 + 1
+print(num)
+print(time.time() - time1, "Seconds")

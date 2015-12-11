@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 39
 
@@ -13,23 +13,23 @@ p ≦ 1000 で解の数が最大になる p を求めよ.
 """
 import time
 import math
-time1=time.time()
-ansdic={}
-for a in range(1,1000):
-    for b in range(a,1000):
-        c=math.sqrt(a**2+b**2)
-        if c==int(c):
-            c=int(c)
-            if c+a+b<1001:
-                if c<a+b and c>a and c>b:
+time1 = time.time()
+ansdic = {}
+for a in range(1, 1000):
+    for b in range(a, 1000):
+        c = math.sqrt(a ** 2 + b ** 2)
+        if c == int(c):
+            c = int(c)
+            if c + a + b < 1001:
+                if c < a + b and c > a and c > b:
                     try:
-                        ansdic[a+b+c]+=1
+                        ansdic[a + b + c] += 1
                     except KeyError:
-                        ansdic[a+b+c]=1
-p,amount=0,0
-for i,j in ansdic.iteritems():
-    if j>amount:
-        p,amount=i,j
+                        ansdic[a + b + c] = 1
+p, amount = 0, 0
+for i, j in ansdic.items():
+    if j > amount:
+        p, amount = i, j
 
-print u"answer is %d . %d has %d solutions."%(p,p,amount)
-print time.time()-time1, "seconds"
+print("answer is %d . %d has %d solutions." % (p, p, amount))
+print(time.time() - time1, "seconds")

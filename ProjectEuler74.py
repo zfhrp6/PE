@@ -1,5 +1,5 @@
-#coding:utf-8
 #!/usr/bin/env python
+# coding:utf-8
 """
 Project Euler Problem 74
 
@@ -21,35 +21,36 @@ Project Euler Problem 74
 """
 import time
 import math
-import Euler
-t1=time.time()
+t1 = time.time()
 
-answer=0
+answer = 0
+
+
 def fac(n):
-    re=0
-    n=list(str(n))
+    re = 0
+    n = list(str(n))
     for i in n:
-        re+=math.factorial(int(i))
+        re += math.factorial(int(i))
     return re
 
-lengths=[2,1,1]
+lengths = [2, 1, 1]
 
-for i in xrange(3,1000001):
-    if fac(i)==i:
+for i in range(3, 1000001):
+    if fac(i) == i:
         continue
-    moto=i*1
-    thisloop=[]
+    moto = i * 1
+    thisloop = []
     thisloop.append(i)
     while fac(i) not in thisloop:
-        if fac(i)<moto:
-            length=len(thisloop)+lengths[fac(i)]
+        if fac(i) < moto:
+            length = len(thisloop) + lengths[fac(i)]
             lengths.append(length)
             break
-        i=fac(i)
+        i = fac(i)
         thisloop.append(i)
     lengths.append(len(thisloop))
-    if len(thisloop)==60:
-        answer+=1
+    if len(thisloop) == 60:
+        answer += 1
 
-print answer
-print time.time()-t1, "seconds"
+print(answer)
+print(time.time() - t1, "seconds")

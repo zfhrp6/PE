@@ -1,5 +1,5 @@
-#coding:utf-8
 #!/usr/bin/env python
+# coding:utf-8
 """
 Project Euler Problem 50
 
@@ -12,39 +12,38 @@ Project Euler Problem 50
 100万未満の素数を連続する素数の和で表したときに最長になるのはどの素数か?
 """
 import time
-import math
 import Euler
-time1=time.time()
-maxl=0
+time1 = time.time()
+maxl = 0
 
-limit=1000000
-answer=0
+limit = 1000000
+answer = 0
 
-max_kosuu=550  #この個数を超えて和を求めても100万を超過する
+max_kosuu = 550  # この個数を超えて和を求めても100万を超過する
 
-primes=tuple(Euler.prime_make(limit))
-primes_2=tuple(primes[1:])
+primes = tuple(Euler.prime_make(limit))
+primes_2 = tuple(primes[1:])
 
-for i in xrange(2,max_kosuu,2):
-    sums=sum(primes[:i])
-    length=len(primes[:i])
-    if sums>limit:
+for i in range(2, max_kosuu, 2):
+    sums = sum(primes[:i])
+    length = len(primes[:i])
+    if sums > limit:
         break
-    if length>maxl and sums in primes:
-        maxl=length
-        answer=sums
-        print maxl,"""primes[:i],""""sum is",sums
+    if length > maxl and sums in primes:
+        maxl = length
+        answer = sums
+        print(maxl, """primes[:i],""""sum is", sums)
 
-for i in xrange(3,max_kosuu,2):
-    for j in xrange(len(primes_2)-i):
-        sums=sum(primes_2[j:i])
-        length=len(primes[j:i])
-        if sums>limit:
+for i in range(3, max_kosuu, 2):
+    for j in range(len(primes_2) - i):
+        sums = sum(primes_2[j:i])
+        length = len(primes[j:i])
+        if sums > limit:
             break
-        if length>maxl and sums in primes:
-            maxl=length
-            answer=sums
-            print maxl,"""primes_2[j:i],""""sum is",sums
+        if length > maxl and sums in primes:
+            maxl = length
+            answer = sums
+            print(maxl, """primes_2[j:i],""""sum is", sums)
 
 """
 def inlistcheck(x,seq):
@@ -70,5 +69,5 @@ for l in range(22,len(s)-100):
             k=l
 """
 
-print answer
-print time.time()-time1, "seconds"
+print(answer)
+print(time.time() - time1, "seconds")

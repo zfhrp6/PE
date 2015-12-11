@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#Project Euler Problem 29
+# Project Euler Problem 29
 """
 2 ≤ a ≤ 5 と 2 ≤ b ≤ 5について, a^bを全て考えてみよう:
 
@@ -16,13 +16,13 @@
 """
 import itertools
 import time
-time1=time.time()
-nums=[]
-for x,y in itertools.permutations(range(2,101),2):
-    nums.append(x**y)
-for z in range(2,101):
-    nums.append(z**z)
-answer=list(set(nums))
+time1 = time.time()
+nums = []
+for x, y in itertools.permutations(range(2, 101), 2):
+    nums.append(x ** y)
+for z in range(2, 101):
+    nums.append(z ** z)
+answer = list(set(nums))
 answer.sort()
-print len(answer)
-print time.time()-time1,"Seconds"
+print(len(answer))
+print(time.time() - time1, "Seconds")

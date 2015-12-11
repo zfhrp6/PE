@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#project euler problem 55
+# project euler problem 55
 """
 47とその反転を足し合わせると, 47 + 74 = 121となり, 回文数になる.
 全ての数が素早く回文数になるわけではない. 349を考えよう,
@@ -22,16 +22,16 @@ Lychrel数で無いと証明されていない数はLychrel数だと仮定する
 """
 import time
 import Euler
-time1=time.time()
+time1 = time.time()
 
-s=0
-for i in range(1,10000):
-    k=i
-    for n in range(1,50):
-        k+=int(str(k)[::-1])
+s = 0
+for i in range(1, 10000):
+    k = i
+    for n in range(1, 50):
+        k += int(str(k)[::-1])
         if Euler.is_kaibun(k):
-            s+=1
+            s += 1
             break
-answer=9999-s
-print answer
-print time.time()-time1, "Seconds"
+answer = 9999 - s
+print(answer)
+print(time.time() - time1, "Seconds")

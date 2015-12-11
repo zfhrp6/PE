@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#Project Euler Problem 12
+# Project Euler Problem 12
 """
 三角数の数列は自然数の和で表わされ、7番目の三角数は 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28 である。
 三角数の最初の10項は
@@ -19,21 +19,21 @@
 では、501 個以上の約数をもつ最初の三角数はいくらか。
 """
 import time
-from math import *
-time1=time.time()
+from math import sqrt
+time1 = time.time()
 
-c=0
-n=1
-tri=0
-while c<500:
-    c=0
-    tri+=n
-    n+=1
-    for i in range(1,int(sqrt(tri))):
-        if tri%i==0:
-            c+=2
-    if (int(sqrt(tri)))**2==tri:
-        c+=1
+c = 0
+n = 1
+tri = 0
+while c < 500:
+    c = 0
+    tri += n
+    n += 1
+    for i in range(1, int(sqrt(tri))):
+        if tri % i == 0:
+            c += 2
+    if (int(sqrt(tri))) ** 2 == tri:
+        c += 1
 
-print tri,c
-print time.time()-time1, "seconds"
+print(tri, c)
+print(time.time() - time1, "seconds")

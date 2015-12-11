@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 57
 
@@ -16,17 +16,16 @@ project euler problem 57
 """
 import time
 import math
-import Euler
-t0=time.time()
-answer=0
-bunshi=3
-bunbo=2
-i=0
-while i<=1000:
-    i+=1
-    if int(math.log10(bunshi))>int(math.log10(bunbo)):
-        answer+=1
-    bunshi,bunbo=2*bunbo+bunshi,bunbo+bunshi
+t0 = time.time()
+answer = 0
+bunshi = 3
+bunbo = 2
+i = 0
+while i <= 1000:
+    i += 1
+    if int(math.log10(bunshi)) > int(math.log10(bunbo)):
+        answer += 1
+    bunshi, bunbo = 2 * bunbo + bunshi, bunbo + bunshi
 
-print answer
-print time.time()-t0, "seconds"
+print(answer)
+print(time.time() - t0, "seconds")

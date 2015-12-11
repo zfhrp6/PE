@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 100
 
@@ -17,25 +17,25 @@ project euler problem 100
 ※だいたい0.707107のところになる。
 """
 import time
-t0=time.time()
-amount=100
-blue=0
-flag=True
+t0 = time.time()
+amount = 100
+blue = 0
+flag = True
 
-ans_l=[]
+ans_l = []
 
 while flag:
-    amount+=1
-    if amount%1000==0:
-        print amount
-    for i in xrange(amount*7065/10000,amount*707108/1000000):
-        if i*(i-1)*1.0/(amount*(amount-1))==0.5:
-            blue=i
-            ans_l.append((blue,amount,blue*1.0/amount))
-            if len(ans_l)>0:
-                flag=False
+    amount += 1
+    if amount % 1000 == 0:
+        print(amount)
+    for i in range(amount * 7065 / 10000, amount * 707108 / 1000000):
+        if i * (i - 1) * 1.0 / (amount * (amount - 1)) == 0.5:
+            blue = i
+            ans_l.append((blue, amount, blue * 1.0 / amount))
+            if len(ans_l) > 0:
+                flag = False
                 break
 
-print blue,amount,blue*1.0/amount
-print ans_l
-print time.time()-t0, "seconds"
+print('{}, {}, {}'.format(blue, amount, blue * 1.0 / amount))
+print(ans_l)
+print('{} seconds'.format(time.time() - t0))

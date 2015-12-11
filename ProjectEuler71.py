@@ -1,5 +1,5 @@
-#coding:utf-8
 #!/usr/bin/env python
+# coding:utf-8
 """
 Project Euler Problem 71
 
@@ -14,29 +14,27 @@ d ≤ 8について既約分数を大きさ順に並べると, 以下を得る:
 d ≤ 1,000,000について真既約分数を大きさ順に並べたとき, 3/7のすぐ左の分数の分子を求めよ.
 """
 import time
-import math
-import Euler
-time1=time.time()
+time1 = time.time()
 
-values=[]
-lists=[]
-for d in xrange(1000001, 16,-1):
-    if d%1000==0:
-        print d
-    for n in xrange(int(d*29999999999999.0/70000000000001),int(d*3.00000001/7)):
-        a=1.0*n/d
-        if a>3.0/7:
+values = []
+lists = []
+for d in range(1000001, 16, -1):
+    if d % 1000 == 0:
+        print(d)
+    for n in range(int(d * 29999999999999.0 / 70000000000001), int(d * 3.00000001 / 7)):
+        a = 1.0 * n / d
+        if a > 3.0 / 7:
             break
         if a not in values:
-            lists.append((a,n,d))
+            lists.append((a, n, d))
 
 lists.sort()
-lists=tuple(lists)
+lists = tuple(lists)
 
 """for i in xrange(len(lists)):
     if lists[i][1]==3 and lists[i][2]==7:
         answer=lists[i-1]
         break"""
 
-print lists[-1]
-print time.time()-time1, "seconds"
+print(lists[-1])
+print(time.time() - time1, "seconds")

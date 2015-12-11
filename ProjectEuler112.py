@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 112
 
@@ -12,25 +12,24 @@ project euler problem 112
 活発な数が数の割合が99%ちょうどになる最小の数を求めよ。
 """
 import time
-import math
-time1=time.time()
-lst=[x for x in range(1,101)]
-i=100
+time1 = time.time()
+lst = [x for x in range(1, 101)]
+i = 100
 while True:
-    i+=1
-    stri=str(i)
-    listi=list(stri)
-    listup=list(stri)
+    i += 1
+    stri = str(i)
+    listi = list(stri)
+    listup = list(stri)
     listup.sort()
-    listdown=list(stri)
+    listdown = list(stri)
     listdown.sort()
     listdown.reverse()
-    if listi==listup or listi==listdown:
+    if listi == listup or listi == listdown:
         lst.append(i)
-    if len(lst)*1.0/i==1.0/100:
+    if len(lst) * 1.0 / i == 1.0 / 100:
         break
-    if time1-time.time()>300:
+    if time1 - time.time() > 300:
         break
 
-print i
-print time.time()-time1, "seconds"
+print(i)
+print('{} seconds'.format(time.time() - time1))

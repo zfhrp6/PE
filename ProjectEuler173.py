@@ -1,5 +1,5 @@
-#coding:utf-8
 #!/usr/bin/env python
+# coding:utf-8
 """
 Project Euler Problem 173
 
@@ -11,20 +11,19 @@ Project Euler Problem 173
 100万個以下のタイルを使うと何種類のlaminaeが作れるか?
 """
 import time
-import math
-import Euler
-t1=time.time()
+t1 = time.time()
 
-count=0
-for i in xrange(3,500001):
-    if i%100==0:print i
-    for j in xrange(i%2,i-1,2):
-        if j==0:
+count = 0
+for i in range(3, 500001):
+    if i % 100 == 0:
+        print(i)
+    for j in range(i % 2, i - 1, 2):
+        if j == 0:
             continue
 
-        ij=(i+j)*(i-j)
-        if ij<1000001:
-            count+=1
+        ij = (i + j) * (i - j)
+        if ij < 1000001:
+            count += 1
 
-print count
-print time.time()-t1, "seconds"
+print(count)
+print(time.time() - t1, "seconds")

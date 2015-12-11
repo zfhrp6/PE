@@ -13,9 +13,9 @@ Problem 24
 """
 import time
 import itertools
-time1=time.time()
+time1 = time.time()
 
-l=list(itertools.permutations(range(10)))
+l = list(itertools.permutations(range(10)))
 
-print l[999999]
-print time.time()-time1, "seconds"
+print(l[999999])
+print(time.time() - time1, "seconds")

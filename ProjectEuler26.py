@@ -19,26 +19,26 @@ Problem 26
 d < 1000 なる 1/d の中で循環節が最も長くなるような d を求めよ。
 """
 import time
-time1=time.time()
+time1 = time.time()
 
-num=0
-for i in range(1,1000):
-    k=i
-    while i%5==0:
-        i=i/5
-    while i%2==0:
-        i=i/2
-    if i==1:
+num = 0
+for i in range(1, 1000):
+    k = i
+    while i % 5 == 0:
+        i = i / 5
+    while i % 2 == 0:
+        i = i / 2
+    if i == 1:
         continue
 
-    j=1
+    j = 1
     while True:
-        if (10**j)%i==1:
-            if j>num:
-                num=k
+        if (10 ** j) % i == 1:
+            if j > num:
+                num = k
             break
-        j+=1
+        j += 1
 
 
-print num
-print time.time()-time1, "seconds"
+print(num)
+print(time.time() - time1, "seconds")

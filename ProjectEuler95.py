@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 95
 
@@ -15,24 +15,23 @@ project euler problem 95
 いずれの要素も 1,000,000 を超えない最長の友愛鎖の最小のメンバーを求めよ.
 """
 import time
-import math
 import Euler
-time1=time.time()
-templist=[]
-anslist=[]
-for i in range(11,1000000):
-    templist=[]
-    min_menber=i
-    if Euler.sum_divisors(i)<i:
+time1 = time.time()
+templist = []
+anslist = []
+for i in range(11, 1000000):
+    templist = []
+    min_menber = i
+    if Euler.sum_divisors(i) < i:
         continue
-    while i>=min_menber:
-        i=Euler.sum_divisors(i)
-        if i==min_menber or i>1000000:
+    while i >= min_menber:
+        i = Euler.sum_divisors(i)
+        if i == min_menber or i > 1000000:
             break
         templist.append(i)
-    if i==min_menber and len(templist)>len(anslist):
-        anslist=templist
+    if i == min_menber and len(templist) > len(anslist):
+        anslist = templist
 
 
-print min(anslist)
-print time.time()-time1, "seconds"
+print(min(anslist))
+print(time.time() - time1, "seconds")

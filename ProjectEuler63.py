@@ -1,5 +1,5 @@
-#coding:utf-8
 #!/usr/bin/env python
+# coding:utf-8
 """
 Project Euler Problem 63
 
@@ -10,15 +10,15 @@ Project Euler Problem 63
 """
 import time
 import math
-c=0
-ls=[]
-time1=time.time()
-for i in range(1,10): #10以上は無駄
-    for j in range(1,101): #9^100乗が96桁しかないので。
-        if math.log10(i**j)+1>=j:
-            c+=1
-            ls.append(i**j)
+c = 0
+ls = []
+time1 = time.time()
+for i in range(1, 10):  # 10以上は無駄
+    for j in range(1, 101):  # 9^100乗が96桁しかないので。
+        if math.log10(i ** j) + 1 >= j:
+            c += 1
+            ls.append(i ** j)
 
-print c
-print time.time()-time1, "seconds"
-del(c,i,j)
+print(c)
+print(time.time() - time1, "seconds")
+del(c, i, j)

@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 183
 
@@ -17,30 +17,32 @@ M(11) = 14641/256 = 57.19140625であり, 有限小数である.
 5 ≦ N ≦ 10000のとき, ΣD(N) を求めよ.
 """
 import time
-import math
 import Euler
-t0=time.time()
-answer=0
+t0 = time.time()
+answer = 0
+
+
 def M(n):
-    maax=0
-    for k in range(1,n+5):
-        if (1.0*n/k)**k>maax:
-            maax=(1.0*n/k)**k
-            maax_k=k
-    return (maax,maax_k)
+    maax = 0
+    for k in range(1, n + 5):
+        if (1.0 * n / k) ** k > maax:
+            maax = (1.0 * n / k) ** k
+            maax_k = k
+    return (maax, maax_k)
+
 
 def det_M(seq):
-    div1=set(Euler.factoring(seq[0]))
-    div2=set(Euler.factoring(seq[1]))
-    check=div2.difference(div1)
+    div1 = set(Euler.factoring(seq[0]))
+    div2 = set(Euler.factoring(seq[1]))
+    check = div2.difference(div1)
     if 3 in check or 7 in check:
         return 1
     else:
         return -1
 
-for N in range(5,101):
-    print N
-    answer+=N*det_M(M(N))
+for N in range(5, 101):
+    print(N)
+    answer += N * det_M(M(N))
 
-print answer
-print time.time()-t0, "seconds"
+print(answer)
+print(time.time() - t0, "seconds")

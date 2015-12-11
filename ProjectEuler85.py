@@ -1,5 +1,5 @@
-#coding:utf-8
 #!/usr/bin/env python
+# coding:utf-8
 """
 Project Euler Problem 85
 
@@ -13,36 +13,37 @@ n*mの長方形に含まれる長方形の数は、1/4 * (m^2*n^2 +m^2*n +m*n^2 
 """
 import time
 import math
-import Euler
-t1=time.time()
+t1 = time.time()
 
 
-def countf(tate,yoko):
-    r_ct=0
-    for i in xrange(1,tate+1):
-        for j in xrange(1,yoko+1):
-            r_ct+=(tate+1-i)*(yoko+1-j)
+def countf(tate, yoko):
+    r_ct = 0
+    for i in range(1, tate + 1):
+        for j in range(1, yoko + 1):
+            r_ct += (tate + 1 - i) * (yoko + 1 - j)
     return r_ct
 
-def countf_2(m,n):
-    return (m**2*n**2 +m**2*n +m*n**2 +m*n)/4
+
+def countf_2(m, n):
+    return (m ** 2 * n ** 2 + m ** 2 * n + m * n ** 2 + m * n) / 4
+
 
 def main():
-    answer_dif=9999999999999
-    answer_s=0
-    target=2*10**6
-    h=k=0
-    for h in xrange(1,10**3):
-        for k in xrange(h,10**3):
-            if math.fabs(countf_2(h,k)-target)<answer_dif:
-                answer_dif=math.fabs(countf_2(h,k)-target)
-                answer_s=h*k
-                print h,k
+    answer_dif = 9999999999999
+    answer_s = 0
+    target = 2 * 10 ** 6
+    h = k = 0
+    for h in range(1, 10 ** 3):
+        for k in range(h, 10 ** 3):
+            if math.fabs(countf_2(h, k) - target) < answer_dif:
+                answer_dif = math.fabs(countf_2(h, k) - target)
+                answer_s = h * k
+                print(h, k)
     return answer_s
 
 
 if __name__ == '__main__':
-    answer=main()
+    answer = main()
 
-print answer
-print time.time()-t1, "seconds"
+print(answer)
+print(time.time() - t1, "seconds")

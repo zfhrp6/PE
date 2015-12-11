@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 138
 
@@ -16,29 +16,28 @@ h = b ± 1, b, Lが全て正の整数であるとし,
 """
 import time
 import math
-import Euler
-t0=time.time()
-answer=0
-b=0
-count=0
+t0 = time.time()
+answer = 0
+b = 0
+count = 0
 while True:
-    b+=2
-    if b%100000==0:
-        print b
-    h=b-1
-    l=math.sqrt((1.0*b/2)**2+h**2)
-    if l%1==0.0 and 2*l>b:
-        count+=1
-        answer+=l
-    if count>=12:
+    b += 2
+    if b % 100000 == 0:
+        print(b)
+    h = b - 1
+    l = math.sqrt((1.0 * b / 2) ** 2 + h ** 2)
+    if l % 1 == 0.0 and 2 * l > b:
+        count += 1
+        answer += l
+    if count >= 12:
         break
-    h=b+1
-    l=math.sqrt((1.0*b/2)**2+h**2)
-    if l%1==0.0 and 2*l>b:
-        count+=1
-        answer+=l
-    if count>=12:
+    h = b + 1
+    l = math.sqrt((1.0 * b / 2) ** 2 + h ** 2)
+    if l % 1 == 0.0 and 2 * l > b:
+        count += 1
+        answer += l
+    if count >= 12:
         break
 
-print answer
-print time.time()-t0, "seconds"
+print(answer)
+print(time.time() - t0, 'seconds')

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#Project Euler Problem 28
+# Project Euler Problem 28
 """
 1から初めて, 以下のように反時計回りに数字を並べていくと, 辺の長さが7の渦巻きが形成される.
 37* 36	35	34	33	32	31*
@@ -22,25 +22,25 @@
 import time
 import math
 import Euler
-time1=time.time()
+time1 = time.time()
 
-amount=0
-p_amount=0
-c=0
-add_count=0
-add_num=2
-i=1
+amount = 0
+p_amount = 0
+c = 0
+add_count = 0
+add_num = 2
+i = 1
 while True:
-    if amount!=0 and math.sqrt(i)%1==0 and int(math.sqrt(i))%2==1:
-        if p_amount*10<=amount:
+    if amount != 0 and math.sqrt(i) % 1 == 0 and int(math.sqrt(i)) % 2 == 1:
+        if p_amount * 10 <= amount:
             break
-    if add_count==4:
-        add_count=0
-        add_num+=2
-    i+=add_num
-    add_count+=1
-    amount+=1
+    if add_count == 4:
+        add_count = 0
+        add_num += 2
+    i += add_num
+    add_count += 1
+    amount += 1
     if Euler.primecheck(i):
-        p_amount+=1
-print math.sqrt(i),i
-print time.time()-time1,"Seconds"
+        p_amount += 1
+print(math.sqrt(i), i)
+print(time.time() - time1, "Seconds")

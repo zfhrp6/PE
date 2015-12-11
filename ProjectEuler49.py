@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#Project Euler Problem 49
+# Project Euler Problem 49
 """
 項差3330の等差数列1487, 4817, 8147は次の2つの変わった性質を持つ。
 
@@ -13,7 +13,7 @@
 import time
 import Euler
 import itertools
-time1=time.time()
+time1 = time.time()
 
 """
 s=[2]
@@ -45,21 +45,21 @@ for k in range(len(s)-2):
                 answer.append((s[k],s[k]+l,s[k]+2*l))
                 break
 """
-answer=[]
-primes=tuple(Euler.prime_make(10000))
-for p1,p2 in itertools.combinations(primes,2):
-    if p1<1000 or p2<1000:
+answer = []
+primes = tuple(Euler.prime_make(10000))
+for p1, p2 in itertools.combinations(primes, 2):
+    if p1 < 1000 or p2 < 1000:
         continue
-    p3=2*p2-p1
+    p3 = 2 * p2 - p1
     if p3 not in primes:
         continue
-    p1str,p2str,p3str=map(list,map(str,[p1,p2,p3]))
+    p1str, p2str, p3str = list(map(list, list(map(str, [p1, p2, p3]))))
     p1str.sort()
     p2str.sort()
     p3str.sort()
-    if p1str==p2str and p2str==p3str:
-        answer.append((p1,p2,p3))
+    if p1str == p2str and p2str == p3str:
+        answer.append((p1, p2, p3))
 
 
-print answer
-print time.time()-time1,"Seconds"
+print(answer)
+print(time.time() - time1, "Seconds")

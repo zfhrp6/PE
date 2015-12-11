@@ -1,5 +1,5 @@
-#coding:utf-8
 #!/usr/bin/env python
+# coding:utf-8
 """
 Project Euler Problem 44
 
@@ -16,23 +16,25 @@ P_4 + P_7 = 22 + 70 = 92 = P_8である. しかし差 70 - 22 = 48は五角数�
 import itertools
 import time
 import math
-time1=time.time()
-pentalst=[]
+time1 = time.time()
+pentalst = []
+
+
 def is_penta(x):
-    if ((1+math.sqrt(1+24*x))/6)%1==0:
+    if ((1 + math.sqrt(1 + 24 * x)) / 6) % 1 == 0:
         return True
     else:
         return False
-for i in range(1,3001):
-    pentalst.append(i*(3*i-1)/2)
-pentalst=tuple(pentalst)
-diff_min=100000000000000000000000000000000000000
-for j,k in itertools.combinations(range(len(pentalst)),2):
-    sa=int(math.fabs(pentalst[j]-pentalst[k]))
-    wa=int(pentalst[j]+pentalst[k])
-    if is_penta(sa) and is_penta(wa) and (sa<diff_min):
-        diff_min=sa
+for i in range(1, 3001):
+    pentalst.append(i * (3 * i - 1) / 2)
+pentalst = tuple(pentalst)
+diff_min = 100000000000000000000000000000000000000
+for j, k in itertools.combinations(list(range(len(pentalst))), 2):
+    sa = int(math.fabs(pentalst[j] - pentalst[k]))
+    wa = int(pentalst[j] + pentalst[k])
+    if is_penta(sa) and is_penta(wa) and (sa < diff_min):
+        diff_min = sa
         break
 
-print diff_min
-print time.time()-time1, "seconds"
+print(diff_min)
+print(time.time() - time1, "seconds")

@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 171
 
@@ -14,14 +14,14 @@ f(442) = 4^2 + 4^2 + 2^2 = 16 + 16 + 4 = 36
 import time
 import math
 import Euler
-time1=time.time()
-sums=0
-i=0
-while i<10**20:
-    i+=1
-    if math.sqrt(Euler.sum_numbers_expo(i,2))%1==0:
-        sums+=i
+time1 = time.time()
+sums = 0
+i = 0
+while i < 10 ** 20:
+    i += 1
+    if math.sqrt(Euler.sum_numbers_expo(i, 2)) % 1 == 0:
+        sums += i
 
 
-print sums%1000000000
-print time.time()-time1, "seconds"
+print(sums % 1000000000)
+print(time.time() - time1, "seconds")

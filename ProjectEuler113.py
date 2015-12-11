@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 113
 
@@ -13,25 +13,24 @@ nが大きくなるにつれ, n以下のはずみ数の割合は大きくなる.
 googol数 (10^100) 未満ではずみ数でないものの数を答えよ.
 """
 import time
-import math
-time1=time.time()
-lst=[x for x in range(1,101)]
-i=100
-while i<10**100:
-    i+=1
-    if i%100000==0:
-        print i
-    stri=str(i)
-    listi=list(stri)
-    listup=list(stri)
+time1 = time.time()
+lst = [x for x in range(1, 101)]
+i = 100
+while i < 10 ** 100:
+    i += 1
+    if i % 100000 == 0:
+        print(i)
+    stri = str(i)
+    listi = list(stri)
+    listup = list(stri)
     listup.sort()
-    listdown=list(stri)
+    listdown = list(stri)
     listdown.sort()
     listdown.reverse()
-    if listi==listup or listi==listdown:
+    if listi == listup or listi == listdown:
         lst.append(i)
-    if time1-time.time()>300:
+    if time1 - time.time() > 300:
         break
 
-print len(lst)
-print time.time()-time1, "seconds"
+print(len(lst))
+print('{} seconds'.format(time.time() - time1))

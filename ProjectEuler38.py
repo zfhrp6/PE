@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 38
 
@@ -16,21 +16,20 @@ project euler problem 38
 整数と(1,2,...,n) (n > 1) との連結積として得られる9桁のPandigital数の中で最大のものを答えよ.
 """
 import time
-import math
 import Euler
-time1=time.time()
-lst=[]
-for i in range(1,10**4):
-    sttr=""
-    for j in range(1,10):
-        sttr+=str(i*j)
-        if len(sttr)<9:
+time1 = time.time()
+lst = []
+for i in range(1, 10 ** 4):
+    sttr = ""
+    for j in range(1, 10):
+        sttr += str(i * j)
+        if len(sttr) < 9:
             continue
-        elif len(sttr)==9 and Euler.pandigital_check(int(sttr)):
+        elif len(sttr) == 9 and Euler.pandigital_check(int(sttr)):
             lst.append(sttr)
         else:
             break
 
 
-print max(lst)
-print time.time()-time1, "seconds"
+print(max(lst))
+print(time.time() - time1, "seconds")

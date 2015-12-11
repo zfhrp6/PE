@@ -1,5 +1,5 @@
-# coding:utf-8
 #!/usr/bin/env python
+# coding:utf-8
 """
 Problem 6
 
@@ -13,19 +13,19 @@ Problem 6
 
 """
 import time
-time1=time.time()
-s1=0
-s2=0
-n1=0
-n2=0
-for number in range(1,101):
-    n1+=1
-    s1+=n1**2
-print s1
-for number in range(1,101):
-    n2+=1
-    s2+=n2
-print s2**2
-print ("answer is"), s2**2-s1
-print time.time()-time1,"seconds"
-raw_input()
+time1 = time.time()
+s1 = 0
+s2 = 0
+n1 = 0
+n2 = 0
+for number in range(1, 101):
+    n1 += 1
+    s1 += n1 ** 2
+print(s1)
+for number in range(1, 101):
+    n2 += 1
+    s2 += n2
+print(s2 ** 2)
+print(("answer is"), s2 ** 2 - s1)
+print(time.time() - time1, "seconds")
+input()

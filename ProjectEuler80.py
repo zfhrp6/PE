@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-#project euler problem 80
+# project euler problem 80
 """
 よく知られているように, 自然数の平方根が整数ではないならば, それは無理数である.
 そのような平方根の10進数表示(decimal expansion)は繰り返しを持たない無限小数になる.
@@ -8,13 +8,13 @@
 """
 import time
 import math
-time1=time.time()
+time1 = time.time()
 
-s=0
-for i in range(1,101):
-    if math.sqrt(i)%1!=0:
-        if len
-        for n in range(1,101):
-            s+=int(str(i)[n])
-print s
-print time.time()-time1, "Seconds"
+s = 0
+for i in range(1, 101):
+    if math.sqrt(i) % 1 != 0:
+        # if len
+        for n in range(1, 101):
+            s += int(str(i)[n])
+print(s)
+print(time.time() - time1, "Seconds")

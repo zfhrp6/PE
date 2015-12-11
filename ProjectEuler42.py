@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """Project Euler Problem42
 三角数のn項は tn = ½n(n+1)で与えられる. 最初の10項は
 
@@ -14,20 +14,20 @@
 """
 
 import time
-time1=time.time()
+time1 = time.time()
 
-tri=[n*(n+1)/2 for n in range(1,100)]
-f=open("ProjectEuler42words.txt","r")
-words=f.read().split(",")
-dic={"A":1,"B":2,"C":3,"D":4,"E":5,"F":6,"G":7,"H":8,"I":9,"J":10,"K":11,"L":12,"M":13,
-"N":14,"O":15,"P":16,"Q":17,"R":18,"S":19,"T":20,"U":21,"V":22,"W":23,"X":24,"Y":25,"Z":26,"\"":0}
-count=0
+tri = [n * (n + 1) / 2 for n in range(1, 100)]
+f = open("ProjectEuler42words.txt", "r")
+words = f.read().split(",")
+dic = {"A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8, "I": 9, "J": 10, "K": 11, "L": 12, "M": 13,
+       "N": 14, "O": 15, "P": 16, "Q": 17, "R": 18, "S": 19, "T": 20, "U": 21, "V": 22, "W": 23, "X": 24, "Y": 25, "Z": 26, "\"": 0}
+count = 0
 for i in range(len(words)):
-    n=0
+    n = 0
     for j in range(len(words[i])):
-        n+=dic[words[i][j]]
+        n += dic[words[i][j]]
     if n in tri:
-        count+=1
+        count += 1
 
-print "answer = %d"%(count)
-print "%f Seconds"%(time.time()-time1)
+print("answer = %d" % (count))
+print("%f Seconds" % (time.time() - time1))

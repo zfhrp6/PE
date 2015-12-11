@@ -1,5 +1,5 @@
-#coding:utf-8
 #!/usr/bin/env python
+# coding:utf-8
 """
 Project Euler Problem 123
 
@@ -13,20 +13,19 @@ r を (p_n - 1)^n + (p_n + 1)^n を p_n^2 で割った余りとする.
 余り r が 10^10 より大きくなる最初の n を求めよ.
 """
 import time
-import math
 import Euler
-t1=time.time()
-primes=Euler.prime_make(1000000)
-primes.insert(0,0)
-primes=tuple(primes)
-for i in xrange(7038,len(primes)):
-    if i%2==0:
+t1 = time.time()
+primes = Euler.prime_make(1000000)
+primes.insert(0, 0)
+primes = tuple(primes)
+for i in range(7038, len(primes)):
+    if i % 2 == 0:
         continue
-    m=((primes[i]-1)**i+(primes[i]+1)**i)%(primes[i]**2)
-    if i%100<3:
-        print i,m
-    if m>10**10:
+    m = ((primes[i] - 1) ** i + (primes[i] + 1) ** i) % (primes[i] ** 2)
+    if i % 100 < 3:
+        print(i, m)
+    if m > 10 ** 10:
         break
 
-print i
-print time.time()-t1, "seconds"
+print(i)
+print(time.time() - t1, "seconds")

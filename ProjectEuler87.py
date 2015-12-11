@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 91
 
@@ -12,16 +12,16 @@ project euler problem 91
 """
 import time
 import Euler
-t0=time.time()
-primes=Euler.prime_make(7080)
-answerlist=[]
+t0 = time.time()
+primes = Euler.prime_make(7080)
+answerlist = []
 for x in primes:    # 7079**2>50000000
-    for y in [i for i in primes if i<374]:  # 374**3>50000000
-        for z in [k for k in primes if k<90]:   # 89**4>50000000
-            num=x**2+y**3+z**4
-            if num<50000000:
+    for y in [i for i in primes if i < 374]:  # 374**3>50000000
+        for z in [k for k in primes if k < 90]:   # 89**4>50000000
+            num = x ** 2 + y ** 3 + z ** 4
+            if num < 50000000:
                 answerlist.append(num)
-answerlist=list(set(answerlist))
+answerlist = list(set(answerlist))
 answerlist.sort()
-print len(answerlist)
-print time.time()-t0, "seconds"
+print(len(answerlist))
+print(time.time() - t0, "seconds")

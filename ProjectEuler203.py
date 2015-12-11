@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 203
 
@@ -25,23 +25,24 @@ project euler problem 203
 import time
 import math
 import Euler
-time1=time.time()
-sosu=Euler.prime_make(50000)
-trilist=[x for x in range(1,50)]
-answerlist=[]
-for i in range(2,51):
+time1 = time.time()
+sosu = Euler.prime_make(50000)
+trilist = [x for x in range(1, 50)]
+answerlist = []
+for i in range(2, 51):
     for j in range(int(i)):
-        trilist.append((math.factorial(i)/(math.factorial(j)*math.factorial(i-j))))
-trilist=list(set(trilist))
+        trilist.append(
+            (math.factorial(i) / (math.factorial(j) * math.factorial(i - j))))
+trilist = list(set(trilist))
 for k in trilist:
-    check=1
+    check = 1
     for l in sosu:
-        if k%(l**2)==0:
-            check=0
+        if k % (l ** 2) == 0:
+            check = 0
             break
-    if check==1:
+    if check == 1:
         answerlist.append(k)
-answerlist=list(set(answerlist))
+answerlist = list(set(answerlist))
 
-print sum(answerlist)
-print time.time()-time1, "seconds"
+print(sum(answerlist))
+print(time.time() - time1, "seconds")

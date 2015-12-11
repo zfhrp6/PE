@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 project euler problem 99
 
@@ -15,16 +15,16 @@ project euler problem 99
 """
 import time
 import math
-t0=time.time()
-answer_val=0
-line=0
-for x in open("projecteuler99base_exp.txt","r"):
-    line+=1
-    num=math.log(int(x.split(",")[0]))*int(x.split(",")[1])
-    if num>answer_val:
-        answer_val=num
-        answer=line
-    print line
+t0 = time.time()
+answer_val = 0
+line = 0
+for x in open("projecteuler99base_exp.txt", "r"):
+    line += 1
+    num = math.log(int(x.split(",")[0])) * int(x.split(",")[1])
+    if num > answer_val:
+        answer_val = num
+        answer = line
+    print(line)
 
-print "answer=%d"%(answer)
-print time.time()-t0, "seconds"
+print("answer=%d" % (answer))
+print(time.time() - t0, "seconds")
